@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import Svg, { SvgProps, Path } from "react-native-svg"
+import Blobsvg from './Blobsvg'
+import SocialCreditCounter from './SocialCreditCounter';
+export default function App(props: SvgProps) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <SocialCreditCounter/>
     </View>
   );
 }
