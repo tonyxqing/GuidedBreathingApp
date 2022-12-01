@@ -1,8 +1,7 @@
 import * as React from "react";
-import { Text, View } from "react-native";
-import Animated, { cancelAnimation, interpolate, runOnJS, useAnimatedProps, useAnimatedStyle, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
-import Svg, { Defs, RadialGradient, Stop, Circle } from "react-native-svg";
-import Timer from "./Timer";
+import { Text } from "react-native";
+import Animated, {  interpolate, runOnJS, useAnimatedProps, useAnimatedStyle, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
+import Svg, { Circle } from "react-native-svg";
 
 type BreathDirection = "Breathe In" | "Breathe Out" | "Beginning" | "Breath Hold"
 

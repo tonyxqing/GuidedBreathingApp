@@ -1,10 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Svg, { SvgProps, Path } from "react-native-svg"
+import { StyleSheet, View } from 'react-native';
 import GuidedBreathing from './GuidedBreathing'
-import SocialCreditCounter from './SocialCreditCounter';
-export default function App(props: SvgProps) {
+export default function App() {
 
   return (
     <View style={styles.container}>
