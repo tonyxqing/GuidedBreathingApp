@@ -2,6 +2,9 @@
   "cli": {
     "version": ">= 11.0.3"
   },
+  "android": {
+    "package": "com.tony.guided_breathing_app"
+  },
   "build": {
     "development": {
       "developmentClient": true,
