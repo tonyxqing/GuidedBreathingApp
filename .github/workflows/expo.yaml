@@ -13,22 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check for EXPO_TOKEN
+      run: |
+        if [ -z "${{ secrets.EXPO_TOKEN}}" ]; then
+          echo "You must provide an EXPO_TOKEN secret"
+          exit 1
+        fi
     - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '16'
+        node-version: '18'
+        cache: yarn
+
+    - name: 🏗 Setup EAS
+      uses: expo/expo-github-action@v8
+      with:
+        eas-version: latest
+        token: ${{ secrets.EXPO_TOKEN }}
 
     - name: Install dependencies
-      run: npm install
+      run: yarn install
 
     - name: Run EAS build
       run: eas build -p android --profile preview --local
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: web-build
-        path: web-build/
